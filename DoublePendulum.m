@@ -12,6 +12,6 @@ function [x2, y2] = DoublePendulum(l1, l2)
 
     % Compute answer of ODE. 
     [t, u] = ode23s(@(t, u) odefunc(t, u, l1, l2, m1, m2, g), tspan, u0);
-    x2 = 2*l1*sin(u(:, 1)) + 2*l2*sin(u(:, 2));
-    y2 = -2*l1*cos(u(:, 1)) - 2*l2*cos(u(:, 2));
+    x2 = 2*l1*sin(u(:, 1)) + l2*sin(u(:, 2));
+    y2 = -2*l1*cos(u(:, 1)) - l2*cos(u(:, 2));
 end
